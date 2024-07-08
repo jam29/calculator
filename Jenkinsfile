@@ -34,6 +34,7 @@ pipeline {
             steps {
                 // Example deployment step, adjust as necessary
                 // sh 'scp target/*.jar user@your-server:/path/to/deploy'
+                echo "coucou"
             }
         }
     }
