@@ -11,7 +11,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 // Checkout the source code from your repository
-                git 'https://github.com/jam29/calculator.git'
+                git branch: 'main', credentialsId: 'gitcredentials', url: 'https://github.com/jam29/calculator.git'
             }
         }
         
