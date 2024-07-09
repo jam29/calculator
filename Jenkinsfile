@@ -18,8 +18,9 @@ pipeline {
         stage('Build') {
             steps {
                 script {
-                    // Build the Docker image
+                     // Build .jar
                     sh './mvnw clean package'
+                     // Build the Docker image
                     sh "docker build -t ${DOCKER_IMAGE}:${DOCKER_TAG} ."
                 }
             }
