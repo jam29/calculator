@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'main', credentialsId: 'credentialgit', url: 'https://jam29/calculator.git'
+                git branch: 'main', credentialsId: 'gitcredentials', url: 'https://jam29/calculator.git'
             }
         }
 
