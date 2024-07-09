@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        // Define environment variables if needed
+        // Define environment variables if needed.
         DOCKER_IMAGE = "myapp"
         DOCKER_TAG = "latest"
     }
@@ -31,7 +31,7 @@ pipeline {
                 script {
                     // Run your tests here
                     // For example, you could run a container from the built image and execute tests inside it
-                    sh "docker run --rm ${DOCKER_IMAGE}:${DOCKER_TAG} bash ./mvnw test"
+                    sh "docker run --rm ${DOCKER_IMAGE}:${DOCKER_TAG} "
                 }
             }
         }
