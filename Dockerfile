@@ -1,9 +1,13 @@
-FROM openjdk:11-jre-slim
+# Utiliser une image Java de base
+FROM openjdk:17-jdk-alpine
 
-WORKDIR /app
+# Ajouter le fichier .jar généré dans l'image
+ARG JAR_FILE=target/*.jar
+COPY ${JAR_FILE} app.jar
 
-COPY target/calcul-0.0.1-SNAPSHOT.jar app.jar
+# Exposer le port sur lequel l'application tourne
+EXPOSE 8080
 
-EXPOSE 8084
+# Démarrer l'application
+ENTRYPOINT ["java", "-jar", "/app.jar"]
 
-ENTRYPOINT ["java", "-jar", "app.jar"]
